@@ -41,14 +41,15 @@ WriteArray(myArray);
 
 
 int result = Number(myArray);
-Console.WriteLine("Количество четных элементов в массиве " + result);*/
+Console.WriteLine("Количество четных элементов в массиве " + result);
+*/
 
 /*Задача 36: Задайте одномерный массив, заполненный случайными числами. 
 Найдите сумму элементов, стоящих на нечётных позициях.
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0*/
 
-
+/*
 int[]CreateRandomArray(int size, int minValue, int maxValue)
 {
   int[] array = new int[size];
@@ -89,7 +90,7 @@ WriteArray(myArray);
 int result = sum(myArray);
 Console.WriteLine("Сумма элементов массива, стоящих на нечетных позициях равна " + result);
 
-
+*/
 
 /*Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и 
 минимальным элементов массива.
