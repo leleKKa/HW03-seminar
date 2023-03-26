@@ -91,7 +91,49 @@ Console.WriteLine("Сумма нечетных элементов массива
 */
 
 
-
 /*Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и 
 минимальным элементов массива.
 [3 7 22 2 78] -> 76*/
+
+double[] array(int size, int minValue, int maxValue)
+{
+  double[] randomArray = new double[size];
+      for (int i = 0; i < size; i++)
+        {
+           randomArray[i] = new Random().NextDouble()+new Random().Next(minValue, maxValue + 1);
+           //Console.Write($"{randomArray[i]} ");
+        }
+        return randomArray;
+}
+
+void WriteArray(double[] randomArray)
+{
+  for(int i = 0; i < randomArray.Length; i++)
+    Console.Write(randomArray[i] + " ");
+    Console.WriteLine();
+}
+
+double difference(double[] randomArray)
+{
+  double min = randomArray [0];
+  double max = randomArray [0];
+  for (int i=0; i < randomArray.Length; i++)
+  {
+    if (max < randomArray[i]) max = randomArray[i];
+    if (min > randomArray[i]) min = randomArray[i];
+  }
+  return max-min;
+}
+Console.Write("Введите количество элементов массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите минимально возможное значение: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите максимально возможное значение: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+double [] randomArray = array(size, min, max);
+
+WriteArray(randomArray);
+Console.WriteLine();
+Console.WriteLine($"Разница между максимальным и минимальным элементом массива {difference(randomArray)}");
+
