@@ -48,7 +48,7 @@ Console.WriteLine("Количество четных элементов в ма�
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0*/
 
-/*
+
 int[]CreateRandomArray(int size, int minValue, int maxValue)
 {
   int[] array = new int[size];
@@ -71,7 +71,7 @@ int sum(int[] array)
   int sum = 0;
   for (int i=0; i < array.Length; i++)
   {
-    if (array[i] % 2 >0) sum = sum + array [i];
+    if (i % 2 > 0) sum = sum + array [i];
   }
   return sum;
 }
@@ -87,14 +87,14 @@ int[] myArray = CreateRandomArray(Length, min, max);
 WriteArray(myArray);
 
 int result = sum(myArray);
-Console.WriteLine("Сумма нечетных элементов массива равна " + result);
-*/
+Console.WriteLine("Сумма элементов массива, стоящих на нечетных позициях равна " + result);
+
 
 
 /*Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и 
 минимальным элементов массива.
 [3 7 22 2 78] -> 76*/
-
+/*
 double[] array(int size, int minValue, int maxValue)
 {
   double[] randomArray = new double[size];
@@ -136,4 +136,5 @@ double [] randomArray = array(size, min, max);
 WriteArray(randomArray);
 Console.WriteLine();
 Console.WriteLine($"Разница между максимальным и минимальным элементом массива {difference(randomArray)}");
+*/
 
