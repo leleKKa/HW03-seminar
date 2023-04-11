@@ -210,3 +210,49 @@ WritedArray(matrix2);
 int[,] matrix3 = SumMatrix(matrix1,matrix2);
 WritedArray(matrix3);
 */
+
+/*
+Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+Массив размером 2 x 2 x 2
+66(0,0,0) 25(0,1,0)
+34(1,0,0) 41(1,1,0)
+27(0,0,1) 90(0,1,1)
+26(1,0,1) 55(1,1,1)
+*/
+
+int[,,] CreateRandom2dArray()
+{
+Console.Write("Введите количество строк: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+Console.Write("Bедите количество z: ");
+int z = Convert.ToInt32(Console.ReadLine());
+
+    int[,,] array = new int[rows, columns, z];
+
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+          for (int k = 0; k < z; k++)
+          array[i,j,k] = new Random().Next(10, 100);
+    return array;
+}
+
+void Write2dArray(int[,,] array)
+{
+    for (int k = 0; k < array.GetLength(2); k++)
+    {
+      Console.WriteLine($"{k}");
+      for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j <  array.GetLength(1); j++)
+        {
+        Console.Write($"{array[i,j,k]} ({i}, {j}, {k})");
+        Console.WriteLine();
+        }
+    }
+}
+
+int[,,] myArray = CreateRandom2dArray();
+Write2dArray(myArray);
+Console.WriteLine();
