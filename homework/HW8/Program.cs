@@ -221,53 +221,29 @@ WritedArray(matrix3);
 26(1,0,1) 55(1,1,1)
 */
 
-int[,,] CreateRandom2dArray()
+int[,,] CreateRandom2dArray(int x, int y, int z)
 {
-Console.Write("Введите количество строк: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите количество столбцов: ");
-int columns = Convert.ToInt32(Console.ReadLine());
-Console.Write("Bедите количество z: ");
-int z = Convert.ToInt32(Console.ReadLine());
-
-    int[,,] array = new int[rows, columns, z];
-
-    for (int i = 0; i < rows; i++)
-        for (int j = 0; j < columns; j++)
+    int[,,] array = new int[x, y, z];
+    int num = 10;
+    for (int i = 0; i < x; i++)
+    {
+        for (int j = 0; j < y; j++)
+        {
           for (int k = 0; k < z; k++)
-          array[i,j,k] = new Random().Next(10, 100);
+          {
+          array[i, j, k] = num;
+          num++;
+          }
+        }
+    }
     return array;
 }
 
-/*
-int[,,] arr = new int[4, 4, 5];
 
-// Заполняем массив уникальными двузначными числами
-int num = 10;
-for (int i = 0; i < 4; i++) 
+void Write2dArray(int[,,] array, int x, int y, int z)
 {
-    for (int j = 0; j < 4; j++) {
-        for (int k = 0; k < 5; k++) {
-            arr[i, j, k] = num;
-            num++;
-        }
-    }
-}
-
-// Выводим массив в консоль
-for (int i = 0; i < 4; i++) {
-    for (int j = 0; j < 4; j++) {
-        for (int k = 0; k < 5; k++) {
-            Console.Write(arr[i, j, k] + " ");
-        }
-        Console.WriteLine();
-    }
-    Console.WriteLine();
-}
-*/
-
-void Write2dArray(int[,,] array)
-{
+  if (x * y * z <= 99)
+  {
     for (int k = 0; k < array.GetLength(2); k++)
     {
       Console.WriteLine($"{k}");
@@ -278,9 +254,19 @@ void Write2dArray(int[,,] array)
         Console.WriteLine();
         }
     }
+  }
+  else Console.WriteLine("Введите другие значения x, y, z");
 }
 
 
-int[,,] myArray = CreateRandom2dArray();
-Write2dArray(myArray);
+Console.Write("Введите количество строк: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов: ");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.Write("Bедите количество z: ");
+int z = Convert.ToInt32(Console.ReadLine());
+
+int[,,] myArray = CreateRandom2dArray(x,y,z);
+Write2dArray(myArray, x, y, z);
 Console.WriteLine();
+
