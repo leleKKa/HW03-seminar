@@ -242,7 +242,7 @@ int[,,] CreateRandom2dArray(int x, int y, int z)
 
 void Write2dArray(int[,,] array, int x, int y, int z)
 {
-  if (x * y * z <= 99)
+  if (x * y * z <= 90)
   {
     for (int k = 0; k < array.GetLength(2); k++)
     {
