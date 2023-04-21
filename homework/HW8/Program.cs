@@ -239,6 +239,33 @@ int z = Convert.ToInt32(Console.ReadLine());
     return array;
 }
 
+/*
+int[,,] arr = new int[4, 4, 5];
+
+// Заполняем массив уникальными двузначными числами
+int num = 10;
+for (int i = 0; i < 4; i++) 
+{
+    for (int j = 0; j < 4; j++) {
+        for (int k = 0; k < 5; k++) {
+            arr[i, j, k] = num;
+            num++;
+        }
+    }
+}
+
+// Выводим массив в консоль
+for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < 4; j++) {
+        for (int k = 0; k < 5; k++) {
+            Console.Write(arr[i, j, k] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+*/
+
 void Write2dArray(int[,,] array)
 {
     for (int k = 0; k < array.GetLength(2); k++)
@@ -252,6 +279,7 @@ void Write2dArray(int[,,] array)
         }
     }
 }
+
 
 int[,,] myArray = CreateRandom2dArray();
 Write2dArray(myArray);
